@@ -57,6 +57,9 @@ jobs:
     name: ${{ matrix.name }}${{ matrix.version_suffix }} image build & publish
     steps:
       - uses: actions/checkout@v2
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3.11
 
       - name: Build & publish ${{ matrix.name }} image
         uses: ./.github/actions/build_and_publish_image
