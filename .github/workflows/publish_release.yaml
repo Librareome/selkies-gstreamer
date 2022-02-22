@@ -17,7 +17,8 @@ jobs:
           RELEASE_VERSION: ${{ github.ref_name }}
         run: echo ::set-output name=semver::${RELEASE_VERSION/v/}
       - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3.11
 
 
   # Note: When modifying this job, copy modifications to all other workflows' image jobs.
