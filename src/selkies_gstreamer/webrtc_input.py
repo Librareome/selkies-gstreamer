@@ -303,7 +303,8 @@ class WebRTCInput:
             down {bool} -- toggle key down or up (default: {True})
         """
 
-        keycode = pynput.keyboard.KeyCode(keysym)
+        #keycode = pynput.keyboard.KeyCode(keysym)
+        keycode = 97
         if down:
             self.keyboard.press(keycode)
         else:
