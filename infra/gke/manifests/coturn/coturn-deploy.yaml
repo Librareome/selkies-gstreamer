@@ -32,7 +32,7 @@ spec:
         # coturn container
         ###
         - name: coturn
-          image: ghcr.io/selkies-project/selkies-gstreamer/coturn:latest
+          image: ghcr.io/xwd0418/selkies-gstreamer/coturn:latest
           imagePullPolicy: Always
           env:
             - name: TURN_SHARED_SECRET

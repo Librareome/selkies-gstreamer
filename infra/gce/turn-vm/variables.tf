@@ -31,7 +31,7 @@ variable turn_pool_preemptive_nodes {
   default = false
 }
 variable coturn_image {
-  default = "ghcr.io/selkies-project/selkies-gstreamer/coturn:latest"
+  default = "ghcr.io/xwd0418/selkies-gstreamer/coturn:latest"
 }
 variable turn_realm {
   // realm to return for TURN host.
