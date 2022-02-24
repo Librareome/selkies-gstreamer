@@ -205,6 +205,10 @@ jobs:
         with:
           key: ${{ matrix.cache_key }}
           path: ${{ matrix.target_directory }}/${{ matrix.target_name }}
+          
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3.11
 
   create_release:
     runs-on: ubuntu-latest
