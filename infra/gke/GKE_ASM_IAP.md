@@ -454,7 +454,7 @@ alive
 1. Create an oauth credential to be used with IAP:
 
 ```bash
-curl https://raw.githubusercontent.com/selkies-project/selkies/f6a2e88e3d1bce9f3f1ea28d382b09c546332c46/setup/scripts/create_oauth_client.sh > ${WORKDIR?}/create_oauth_client.sh
+curl https://raw.githubusercontent.com/xwd0418/selkies/f6a2e88e3d1bce9f3f1ea28d382b09c546332c46/setup/scripts/create_oauth_client.sh > ${WORKDIR?}/create_oauth_client.sh
 chmod +x ${WORKDIR?}/create_oauth_client.sh
 ```
 

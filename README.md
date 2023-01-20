@@ -1,6 +1,6 @@
 ![Selkies WebRTC](logo/horizontal-480.png)
 
-![Build](https://github.com/selkies-project/selkies-gstreamer/actions/workflows/build_and_publish_all_images.yaml/badge.svg)
+![Build](https://github.com/xwd0418/selkies-gstreamer/actions/workflows/build_and_publish_all_images.yaml/badge.svg)
 
 [![Discord](https://img.shields.io/discord/798699922223398942?logo=discord)](https://discord.gg/wDNGDeSW5F)
 
@@ -23,7 +23,7 @@ A [`coturn`](addons/coturn) and [`coturn-web`](addons/coturn-web) image are also
 Running the docker container built from the [`Dockerfile.example`](./Dockerfile.example):
 
 ```bash
-docker run --name selkies -it --rm -p 8080:8080 ghcr.io/selkies-project/selkies-gstreamer/gst-py-example:latest-ubuntu20.04
+docker run --name selkies -it --rm -p 8080:8080 ghcr.io/xwd0418/selkies-gstreamer/gst-py-example:latest-ubuntu20.04
 ```
 
 > Now connect to your docker host on port `8080` to access the web interface.
@@ -33,7 +33,7 @@ docker run --name selkies -it --rm -p 8080:8080 ghcr.io/selkies-project/selkies-
 1. Copy the gstreamer build tarball from the docker image and extract it to `/opt/gstreamer`:
 
 ```bash
-docker create --name gstreamer ghcr.io/selkies-project/selkies-gstreamer/gstreamer:latest-ubuntu20.04
+docker create --name gstreamer ghcr.io/xwd0418/selkies-gstreamer/gstreamer:latest-ubuntu20.04
 docker cp gstreamer:/opt/selkies-gstreamer-latest.tgz /opt/selkies-gstreamer-latest.tgz
 docker rm gstreamer
 cd /opt && tar zxvf selkies-gstreamer-latest.tgz
@@ -42,7 +42,7 @@ cd /opt && tar zxvf selkies-gstreamer-latest.tgz
 2. Copy the python wheel from the docker image and install it:
 
 ```bash
-docker create --name selkies-py ghcr.io/selkies-project/selkies-gstreamer/py-build:latest
+docker create --name selkies-py ghcr.io/xwd0418/selkies-gstreamer/py-build:latest
 docker cp selkies-py:/opt/pypi/dist/selkies_gstreamer_disla-1.0.0rc0-py3-none-any.whl /opt/selkies_gstreamer_disla-1.0.0rc0-py3-none-any.whl
 docker rm selkies-py
 python3 -m pip install /opt/selkies_gstreamer_disla-1.0.0rc0-py3-none-any.whl
@@ -51,7 +51,7 @@ python3 -m pip install /opt/selkies_gstreamer_disla-1.0.0rc0-py3-none-any.whl
 3. Install the web interface source from the docker image:
 
 ```bash
-docker create --name gst-web ghcr.io/selkies-project/selkies-gstreamer/gst-web:latest
+docker create --name gst-web ghcr.io/xwd0418/selkies-gstreamer/gst-web:latest
 cd /opt && docker cp gst-web:/usr/share/nginx/html ./gst-web
 docker rm gst-web
 ```
